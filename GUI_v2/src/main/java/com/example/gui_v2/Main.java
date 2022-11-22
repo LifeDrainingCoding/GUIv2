@@ -18,16 +18,17 @@ import java.util.TimeZone;
 import  java.util.Date;
 
 public class Main extends Application {
-int a = 0;
-//total number of calories
-int b = 1;
-//total number of grams
-int c;
-	int d;
-	int e;
-	int f;
-	int g;
+	static int a = 301;
+	//total number of calories
+	static int b = 1;
+	//total number of grams
+	 static int c = 0;
+	static int d = 0;
+	static int e = 0;
+	static int f = 0;
+	static int g = 0;
 	public  static GridPane initRootLayout(){
+
 		GridPane root = new GridPane();
 		root.setAlignment(Pos.CENTER);
 		root.setHgap(10);
@@ -46,6 +47,8 @@ int c;
 
 		TextField sausageTextField = new TextField();
 		sausageTextField.setFont(fontBig);
+		String SausageText = sausageTextField.getText();
+		SausageText = String.valueOf(b);
 		root.add(sausageTextField, 1, 1);
 
 		Text result = new Text("Result");
@@ -80,8 +83,11 @@ int c;
 		Button btn = new Button("calculate");
 		btn.setFont(fontBig);
 		btn.setOnAction(event -> {
-			int a = (a * b) + c + d + e + f + g;
+			String all_colories = String.valueOf((a * b) + c + d + e + f + g);
+			Text all = new Text(all_colories);
+			root.add(all,0 , 7 );
 		});
+
 		root.add(btn, 1, 5);
 		return root;
 	}
